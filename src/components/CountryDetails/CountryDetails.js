@@ -14,9 +14,9 @@ const CountryDetails = ({ countries }) => {
         alt="flag"
       />
       <h1>{country.name.common}</h1>
-      <p>{country.capital}</p>
-      <p>{country.aera}</p>
-
+      <p>Capital: {country.capital}</p>
+      <p>Aera: {country.area} km2</p>
+      <p>Borders:</p>
       {country.borders.map((el) => {
         const displayBorderName = countries.find(
           (name) => name.alpha3Code === el

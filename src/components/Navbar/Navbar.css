@@ -1,0 +1,19 @@
+.Navbar {
+  height: 4rem;
+  background-color: blue;
+  display: flex;
+  place-items: center;
+}
+
+.Navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.Navbar ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}

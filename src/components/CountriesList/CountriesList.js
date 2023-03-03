@@ -7,10 +7,9 @@ const CountriesList = ({ countries }) => {
       {countries.map((country) => {
         const flag = country.alpha2Code.toLowerCase();
         return (
-          <div className="list-group">
+          <div key={country._id} className="list-group">
             <Link
               className="list-group-item list-group-item-action"
-              key={country.name.native}
               to={`/${country.alpha3Code}`}
             >
               <p>{country.name.common}</p>

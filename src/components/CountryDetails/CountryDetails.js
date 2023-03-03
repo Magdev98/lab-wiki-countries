@@ -12,16 +12,16 @@ const CountryDetails = ({ countries }) => {
         src={`https://flagpedia.net/data/flags/icon/72x54/${flag}.png/`}
         alt="flag"
       />
-      <h1>{country.name.common}</h1>
+      <h1 key={country._id}>{country.name.common}</h1>
       <table className="table">
         <thead>
+          <tr>
+            <td style={{ width: '30%' }}>Capital: {country.capital}</td>
+          </tr>
+          <tr>
+            <td>Aera: {country.area} km2</td>
+          </tr>
           <tbody>
-            <tr>
-              <td style={{ width: '30%' }}>Capital: {country.capital}</td>
-            </tr>
-            <tr>
-              <td>Aera: {country.area} km2</td>
-            </tr>
             <tr>
               <td>Borders:</td>
               <td>
@@ -31,10 +31,7 @@ const CountryDetails = ({ countries }) => {
                       (name) => name.alpha3Code === el
                     );
                     return (
-                      <Link
-                        key={country._id}
-                        to={`/${displayBorderName.alpha3Code}`}
-                      >
+                      <Link to={`/${displayBorderName.alpha3Code}`}>
                         <li style={{ listStyleType: 'none' }}>
                           {displayBorderName.name.common}
                         </li>

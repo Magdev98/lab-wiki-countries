@@ -7,27 +7,46 @@ const CountryDetails = ({ countries }) => {
   const flag = country.alpha2Code.toLowerCase();
 
   return (
-    <div>
+    <div className="col-7">
       <img
         src={`https://flagpedia.net/data/flags/icon/72x54/${flag}.png/`}
         alt="flag"
       />
       <h1>{country.name.common}</h1>
-      <p>Capital: {country.capital}</p>
-      <p>Aera: {country.area} km2</p>
-      <p>Borders:</p>
-      <ul>
-        {country.borders.map((el) => {
-          const displayBorderName = countries.find(
-            (name) => name.alpha3Code === el
-          );
-          return (
-            <Link key={country._id} to={`/${displayBorderName.alpha3Code}`}>
-              <li>{displayBorderName.name.common}</li>
-            </Link>
-          );
-        })}
-      </ul>
+      <table className="table">
+        <thead>
+          <tbody>
+            <tr>
+              <td style={{ width: '30%' }}>Capital: {country.capital}</td>
+            </tr>
+            <tr>
+              <td>Aera: {country.area} km2</td>
+            </tr>
+            <tr>
+              <td>Borders:</td>
+              <td>
+                <ul>
+                  {country.borders.map((el) => {
+                    const displayBorderName = countries.find(
+                      (name) => name.alpha3Code === el
+                    );
+                    return (
+                      <Link
+                        key={country._id}
+                        to={`/${displayBorderName.alpha3Code}`}
+                      >
+                        <li style={{ listStyleType: 'none' }}>
+                          {displayBorderName.name.common}
+                        </li>
+                      </Link>
+                    );
+                  })}
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </thead>
+      </table>
     </div>
   );
 };

@@ -29,20 +29,22 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Navbar />
-      <div className="container">
-        <div className="row">
-          <CountriesList countries={countries} />
-          <Routes>
-            <Route
-              path="/:code"
-              element={<CountryDetails countries={countries} />}
-            />
-          </Routes>
+    <body>
+      <div className="App">
+        <Navbar />
+        <div className="container">
+          <div className="row">
+            <CountriesList countries={countries} />
+            <Routes>
+              <Route
+                path="/:code"
+                element={<CountryDetails countries={countries} />}
+              />
+            </Routes>
+          </div>
         </div>
       </div>
-    </div>
+    </body>
   );
 }
 

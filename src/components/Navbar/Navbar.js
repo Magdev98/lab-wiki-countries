@@ -1,13 +1,12 @@
-import './Navbar.css';
 import { NavLink } from 'react-router-dom';
 const Navbar = () => {
   return (
-    <nav className="Navbar">
-      <ul>
-        <li>
-          <NavLink to="/">LAB - WikiCountries</NavLink>
-        </li>
-      </ul>
+    <nav className="navbar navbar-dark bg-primary mb-3">
+      <div className="container">
+        <NavLink to="/" className="navbar-brand">
+          LAB - WikiCountries
+        </NavLink>
+      </div>
     </nav>
   );
 };

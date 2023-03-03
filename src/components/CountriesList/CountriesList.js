@@ -7,7 +7,7 @@ const CountriesList = ({ countries }) => {
       {countries.map((country) => {
         const flag = country.alpha2Code.toLowerCase();
         return (
-          <Link key={country.currencies} to={`/${country.alpha3Code}`}>
+          <Link key={country.name.native} to={`/${country.alpha3Code}`}>
             <p>{country.name.common}</p>
             <img
               src={`https://flagpedia.net/data/flags/icon/72x54/${flag}.png/`}
